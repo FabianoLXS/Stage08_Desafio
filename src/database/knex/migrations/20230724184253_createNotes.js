@@ -2,14 +2,12 @@
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.up = function(knex) {
-  
-};
+exports.up = (knex) =>
+  knex.schema.createTable("users", (table) => {
+    table.increments("id")
+    table.text("title")
+    table.text("description")
+    table.integer("user_id").references("id").inTable("users")
+  })
 
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-exports.down = function(knex) {
-  
-};
+exports.down = (fknex) => knex.schema.dropTable("users")
