@@ -10,4 +10,4 @@ exports.up = (knex) =>
     table.integer("user_id").references("id").inTable("users")
   })
 
-exports.down = (fknex) => knex.schema.dropTable("users")
+exports.down = (knex) => knex.schema.dropTable("users")
