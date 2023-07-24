@@ -1,9 +1,9 @@
 const {hash} = require("bcryptjs")
 const hashedPassword = await hash(password,8)
 
-class UserController {
+class UsersController {
 
 
 }
 
-module.exports = UserController
+module.exports = UsersController
